@@ -1,0 +1,5 @@
+# Ignore all .exe files in subdirectories
+**/*.exe
+
+# Ignore all .txt files in subdirectories
+**/*.txt
