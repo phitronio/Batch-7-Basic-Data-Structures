@@ -1,3 +1,8 @@
 **/*.exe
-**/*.vscode
+**/.cph
+**/.cph/*.prob
+**/.vscode
+**/output
 **/*.txt
+
+
