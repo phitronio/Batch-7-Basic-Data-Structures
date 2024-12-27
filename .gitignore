@@ -1,5 +1,8 @@
-# Ignore all .exe files in subdirectories
 **/*.exe
-
-# Ignore all .txt files in subdirectories
+**/.cph
+**/.cph/*.prob
+**/.vscode
+**/output
 **/*.txt
+
+

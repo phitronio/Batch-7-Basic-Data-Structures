@@ -36,30 +36,17 @@ void print_linked_list(Node* head)
     }
 }
 
-void delete_tail(Node *head)
+void reverse_linked_list(Node* &head, Node* &tail, Node* tmp)
 {
-    Node *tmp = head;
-    while(tmp->next->next != NULL)
+    if(tmp->next == NULL)
     {
-        tmp = tmp ->next;
+        head = tmp;
+        return;
     }
-    Node *deleteNode = tmp->next;
+    reverse_linked_list(head,tail,tmp->next);
+    tmp->next->next = tmp;
     tmp->next = NULL;
-    delete deleteNode;
-    cout<<"Tail node deleted"<<endl;
-}
-
-
-void delete_at_any_pos(Node* head, int idx)
-{
-    Node* tmp = head;
-    for(int i=0;i<idx;i++)
-    {
-        tmp = tmp->next;
-    }
-    Node* deleteNode = tmp->next;
-    tmp->next = tmp->next->next;
-    delete deleteNode;
+    tail = tmp;
 }
 
 int main()
@@ -77,8 +64,9 @@ int main()
         }
         insert_at_tail(head,tail,val);
     }
-    print_linked_list(head);
-    delete_tail(head);
-    print_linked_list(head);
+    reverse_linked_list(head,tail,head);
+    //print_linked_list(head);
+    cout << head->val << endl;
+    cout << tail->val << endl;
     return 0;
 }
