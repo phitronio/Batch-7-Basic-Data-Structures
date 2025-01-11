@@ -59,6 +59,7 @@ int max_height(Node* root)
         return 0;
     int l = max_height(root->left);
     int r = max_height(root->right);
+    
     return max(l,r) + 1;
 }
 
